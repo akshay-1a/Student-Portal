@@ -1,4 +1,4 @@
-import { BarChart, BookOpen, BookPlus, Calendar, CreditCard, Home, LayoutDashboard, PlusCircle, Users } from "lucide-react"
+import { BookOpen, BookPlus, Calendar, CreditCard, Home, LayoutDashboard, PlusCircle, Users } from "lucide-react"
 
 export const APP_METADATA = {
     UNIVERSITY_NAME: "Rowan University",
