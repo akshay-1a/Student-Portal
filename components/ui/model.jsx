@@ -68,7 +68,7 @@ function Model({ mouse, file }) {
     <primitive
       ref={modelRef}
       object={scene}
-      scale={2.4}
+      scale={2}
       position={[0, 0, 0]} // X, Y, Z coordinates
     />
   );
