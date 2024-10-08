@@ -74,7 +74,7 @@ function Model({ mouse, file }) {
   );
 }
 
-export default function ThreeDModel({ file, environmentPreset = "sunset" }) {
+export default function ThreeDModel({ file, preset = "studio" }) {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
 
@@ -117,7 +117,7 @@ export default function ThreeDModel({ file, environmentPreset = "sunset" }) {
           <ambientLight intensity={10} color="#555" />
           <directionalLight position={[0, 1, 1]} intensity={1} />
           <Model mouse={mouse} file={file} />
-          <Environment preset="studio" />
+          <Environment preset={preset} />
           {!isMobile && (
             <OrbitControls
               enableZoom={false}
