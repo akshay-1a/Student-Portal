@@ -40,7 +40,7 @@ export function LandingPage() {
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="text-2xl font-bold text-slate-200">
-              Rowan Portal
+              Rowan University Portal
             </Link>
             <Button asChild variant={"secondary"}>
               <Link href="/dashboard" className="font-bold">Go to Dashboard</Link>
@@ -69,7 +69,7 @@ export function LandingPage() {
           <div
             className="absolute z-10 -bottom-3 flex items-center justify-center ">
             <div className="" >
-                <ThreeDModel file="computerpb" />
+              <ThreeDModel file="computerpb" />
             </div>
           </div>
 
@@ -106,6 +106,53 @@ export function LandingPage() {
             </Button>
           </div>
         </section>
+
+        
+
+        {/* Events */}
+        <section className="events py-20 bg-slate-200 dark:bg-stone-800">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold bg-slate-950 py-2 rounded-md text-center mb-12">Upcoming Events</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { title: 'Event 1', date: '2024-03-15', description: 'This is the first event.' },
+                { title: 'Event 2', date: '2024-03-20', description: 'This is the second event.' },
+                { title: 'Event 3', date: '2024-03-25', description: 'This is the third event.' },
+              ].map((event, index) => (
+                <Card key={index} className="event-card">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
+                    <p className="text-stone-600 dark:text-stone-400">{event.date}</p>
+                    <p className="text-stone-600 dark:text-stone-400">{event.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/*  */}
+        <section className="testimonials py-20 bg-slate-200 dark:bg-stone-800">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold bg-slate-950 py-2 rounded-md text-center mb-12">What Our Students Say</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { name: 'John Doe', testimonial: 'This portal has been a game-changer for me. I can easily access my grades and course materials.' },
+                { name: 'Jane Doe', testimonial: 'I love how user-friendly the portal is. It\'s so easy to navigate and find what I need.' },
+                { name: 'Bob Smith', testimonial: 'The portal has really helped me stay organized and on top of my coursework.' },
+              ].map((testimonial, index) => (
+                <Card key={index} className="testimonial-card">
+                  <CardContent className="p-6">
+                    <p className="text-stone-600 dark:text-stone-400">{testimonial.testimonial}</p>
+                    <p className="text-stone-900 dark:text-stone-50 mt-2">{testimonial.name}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+        
+
       </main>
 
       <footer className="bg-slate-200 text-slate-950 py-8 dark:bg-stone-800">
