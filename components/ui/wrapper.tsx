@@ -1,7 +1,6 @@
-import { div } from 'framer-motion/client';
+
 import Link from 'next/link';
 import React from 'react'
-import { Button } from './button';
 import { LogIn } from 'lucide-react';
 
 export default function Wrapper({
