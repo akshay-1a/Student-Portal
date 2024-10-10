@@ -35,22 +35,10 @@ export function LandingPage() {
   }, [])
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gradient-to-b from-primary/20 to-background">
-      <header className="fixed top-0 left-0 right-0 z-50  backdrop-blur-sm bg-slate-950/80">
-        <nav className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-slate-200">
-              Rowan University Portal
-            </Link>
-            <Button asChild variant={"secondary"}>
-              <Link href="/dashboard" className="font-bold">Go to Dashboard</Link>
-            </Button>
-          </div>
-        </nav>
-      </header>
+    <div ref={containerRef} className="h-full bg-gradient-to-b from-primary/20 to-background">
 
       <main className="">
-        <section className="hero relative h-screen flex items-center justify-center overflow-hidden pb-44">
+        <section className="hero relative h-[91vh] flex items-center justify-center overflow-hidden pb-44">
           <motion.div
             className="z-20 text-center"
             initial={{ opacity: 0, y: 20 }}
@@ -107,7 +95,7 @@ export function LandingPage() {
           </div>
         </section>
 
-        
+
 
         {/* Events */}
         <section className="events py-20 bg-slate-200 dark:bg-stone-800">
@@ -130,6 +118,42 @@ export function LandingPage() {
             </div>
           </div>
         </section>
+        {/* <div className="marquee overflow-hidden whitespace-nowrap group">
+          <div className="animate-marquee text-white/90  text-4xl font-bold tracking-wider py-5 flex space-x-10">
+            <span>Ranked #1  in the country.</span>
+
+            <span>95% job placement rate.</span>
+            <span>$1 Million in Scholarships Awards.</span>
+          </div>
+        </div> */}
+
+        {/* marquee section */}
+        <section className="py-5">
+          <div className="wrapper text-7xl font-bold tracking-wider">
+            <span className="itemLeft item1">Ranked #1 in the Country.</span>
+            <span className="itemLeft item2">$1 Million in Scholarships.</span>
+            <span className="itemLeft item3">95% job placement rate.</span>
+            <span className="itemLeft item4">99% satisfaction rate.</span>
+          </div>
+        </section>
+
+        <section className="achievements pt-20 bg-slate-200 dark:bg-stone-800">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold bg-slate-950 py-2 rounded-md text-center mb-12">Achievements</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[1, 2, 3].map((achievement, index) => (
+                <Card key={index} className="achievement-card">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">Achievement {achievement}</h3>
+                    <p className="text-stone-600 dark:text-stone-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
         {/*  */}
         <section className="testimonials py-20 bg-slate-200 dark:bg-stone-800">
@@ -151,7 +175,7 @@ export function LandingPage() {
             </div>
           </div>
         </section>
-        
+
 
       </main>
 

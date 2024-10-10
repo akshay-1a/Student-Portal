@@ -15,8 +15,8 @@ function Model({ mouse, file }) {
 
   // Set the default rotation
   const defaultRotation = {
-    x: Math.PI / 40, // 22.5 degrees for default X rotation
-    y: Math.PI / 8, // 22.5 degrees for default Y rotation
+    x: Math.PI / 100, // 22.5 degrees for default X rotation
+    y: Math.PI / 100, // 22.5 degrees for default Y rotation
   };
 
   // Set initial rotation

@@ -18,12 +18,34 @@ body {
   }
 }
 
+/* Modern scrollbar styling for all scrollable elements */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height of the scrollbar (for horizontal scroll) */
+  background-color: transparent;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: #a5b4c7; /* Color of the scrollbar thumb (grip) */
+  width: 8px;
+  border-radius: 8px; /* Rounded corners for the thumb */
+  border: 2px solid transparent; /* Space between thumb and scrollbar track */
+  background-clip: padding-box; /* Creates padding inside the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e2e8f0; /* Darker color on hover */
+}
+
+::-webkit-scrollbar-track {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: transparent; /* Color of the scrollbar track */
+  border-radius: 8px; /* Rounded corners for the track */
+}
 
 .shad {
-  filter: drop-shadow(
-    0px 0px 6px rgb(12, 127, 215)
-  );
+  filter: drop-shadow(0px 0px 6px rgb(12, 127, 215));
   transition: filter 0.8s linear; /* Transition for filter property */
 }
 
@@ -31,4 +53,116 @@ body {
   filter: drop-shadow(
     0px 0px 20px rgb(63, 221, 249, 0.5)
   ); /* Use rgba for proper color formatting */
+}
+
+.custom-height {
+  height: calc(100vh - 60px);
+}
+
+.left-curve {
+  position: absolute;
+  height: 100%;
+  width: 20px;
+  background: #e2e8f0;
+  display: block;
+}
+.left-curve::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 20px;
+  background: #020617;
+}
+
+.right-curve {
+  position: absolute;
+  top: -1px;
+  right: -20px;
+  height: 100%;
+  width: 20px;
+  background: #e2e8f0;
+  display: block;
+}
+.right-curve::before {
+  content: "";
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 20px;
+  background: #020617;
+}
+
+.wrapper {
+  /* border: 1px white solid; */
+  /* margin-top: 2rem; */
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -800px;
+  }
+}
+
+.itemLeft {
+  min-width: 900px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-wrap: nowrap;
+  border-radius: 6px;
+  position: absolute;
+  animation-timing-function: linear;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  color: rgba(110, 252, 255);
+  left: max(calc(900px * 4), 100%);
+  animation-name: scrollLeft;
+  -webkit-text-fill-color: initial; /* This keeps the original text color */
+  -webkit-text-stroke: 0; /* Start with no stroke */
+  transition: -webkit-text-stroke 4s linear, -webkit-text-fill-color 4s linear;
+}
+
+.itemLeft:hover {
+  opacity: 1;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+}
+
+.itemLeft:nth-child(even) {
+  color: rgba(255, 116, 241);
+}
+
+.item1 {
+  animation-delay: calc(20s / 4 * (4 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(20s / 4 * (4 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(20s / 4 * (4 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(20s / 4 * (4 - 4) * -1);
 }
